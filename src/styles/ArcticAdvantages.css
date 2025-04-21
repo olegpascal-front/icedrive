@@ -1,0 +1,179 @@
+/* Уникальные классы с префиксом arctic-advantages- */
+.arctic-advantages-section {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #F8FBFF 100%);
+    padding: 100px 0;
+    position: relative;
+  }
+  
+  .arctic-advantages-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .arctic-advantages-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .arctic-advantages-main-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+  
+  .arctic-advantages-main-title span {
+    color: #2091F9;
+    position: relative;
+  }
+  
+  .arctic-advantages-main-title span::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(32, 145, 249, 0.2);
+    z-index: -1;
+  }
+  
+  .arctic-advantages-subtitle {
+    font-size: 1.2rem;
+    color: #64748B;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .arctic-advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .arctic-advantage-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(32, 145, 249, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(32, 145, 249, 0.1);
+  }
+  
+  .arctic-advantage-card:hover {
+    box-shadow: 0 15px 40px rgba(32, 145, 249, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(32, 145, 249, 0.2);
+  }
+  
+  .arctic-advantage-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(32, 145, 249, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  
+  .arctic-advantage-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .arctic-advantage-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 15px;
+  }
+  
+  .arctic-advantage-description {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  
+  .arctic-advantages-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  
+  .arctic-stat-item {
+    text-align: center;
+  }
+  
+  .arctic-stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2091F9;
+    margin-bottom: 5px;
+  }
+  
+  .arctic-stat-label {
+    color: #64748B;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Анимации */
+  .arctic-advantage-card {
+    will-change: transform;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 992px) {
+    .arctic-advantages-main-title {
+      font-size: 2.4rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .arctic-advantages-section {
+      padding: 70px 0;
+    }
+    
+    .arctic-advantages-main-title {
+      font-size: 2rem;
+    }
+    
+    .arctic-advantages-subtitle {
+      font-size: 1rem;
+    }
+    
+    .arctic-advantages-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .arctic-advantage-card {
+      padding: 30px 25px;
+    }
+    
+    .arctic-advantages-stats {
+      gap: 30px;
+    }
+    
+    .arctic-stat-number {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .arctic-advantages-main-title {
+      font-size: 1.8rem;
+    }
+    
+    .arctic-advantages-stats {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+  }

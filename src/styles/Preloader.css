@@ -1,0 +1,180 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #000428, #004e92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
+  overflow: hidden;
+}
+
+/* Анимация падающих снежинок */
+.snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  animation: falling linear infinite;
+  filter: drop-shadow(0 0 5px #4DD2FF);
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Настройки снежинок */
+.snowflake-0 { left: 5%; animation-duration: 8s; animation-delay: 0s; }
+.snowflake-1 { left: 15%; animation-duration: 10s; animation-delay: 1s; }
+.snowflake-2 { left: 25%; animation-duration: 7s; animation-delay: 0.5s; }
+.snowflake-3 { left: 35%; animation-duration: 9s; animation-delay: 1.5s; }
+.snowflake-4 { left: 45%; animation-duration: 6s; animation-delay: 0.2s; }
+.snowflake-5 { left: 55%; animation-duration: 8s; animation-delay: 1.2s; }
+.snowflake-6 { left: 65%; animation-duration: 7s; animation-delay: 0.7s; }
+.snowflake-7 { left: 75%; animation-duration: 9s; animation-delay: 0.9s; }
+.snowflake-8 { left: 85%; animation-duration: 6s; animation-delay: 0.4s; }
+.snowflake-9 { left: 95%; animation-duration: 8s; animation-delay: 1.1s; }
+.snowflake-10 { left: 10%; animation-duration: 7s; animation-delay: 0.3s; }
+.snowflake-11 { left: 30%; animation-duration: 9s; animation-delay: 1.3s; }
+.snowflake-12 { left: 50%; animation-duration: 6s; animation-delay: 0.6s; }
+.snowflake-13 { left: 70%; animation-duration: 8s; animation-delay: 0.8s; }
+.snowflake-14 { left: 90%; animation-duration: 7s; animation-delay: 1.4s; }
+
+/* Основной контент */
+.preloader-content {
+  display: flex;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 5rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+/* Шестеренка */
+.gear {
+  color: #FFD700;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Коньки */
+.skate {
+  color: #FFFFFF;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Снежинка */
+.snowflake-icon {
+  color: #4DD2FF;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Текст */
+.text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px currentColor;
+}
+
+.ice-text {
+  color: #4DD2FF;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.metal-text {
+  color: #E0E0E0;
+  animation: glow 2s ease-in-out infinite alternate 0.3s;
+}
+
+.blue-text {
+  color: #2091F9;
+  animation: glow 2s ease-in-out infinite alternate 0.6s;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px currentColor;
+  }
+  to {
+    text-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .preloader-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .icon {
+    font-size: 4rem;
+  }
+  
+  .text {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,218 @@
+/* Основные размеры */
+:root {
+  --rink-length: 600px;
+  --rink-width: 300px;
+  --corner-radius: 85px;
+  --goal-width: 18.3px;
+  --goal-height: 12.2px;
+  --faceoff-circle-radius: 45px;
+  --zone-defense-width: 228.6px;
+  --zone-neutral-width: 142.8px;
+}
+
+.hockey-rink {
+  position: relative;
+  width: var(--rink-length);
+  height: var(--rink-width);
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: var(--corner-radius);
+  overflow: hidden;
+  margin: 10px auto;
+}
+
+.hockey-rink__ice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.hockey-rink__center-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  transform: translateY(-50%);
+}
+
+.hockey-rink__blue-line {
+  position: absolute;
+  top: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+  transform: translateY(-50%);
+}
+
+.hockey-rink__blue-line--left {
+  left: var(--zone-defense-width);
+}
+
+.hockey-rink__blue-line--right {
+  right: var(--zone-defense-width);
+}
+
+.hockey-rink__goal {
+  position: absolute;
+  top: 50%;
+  width: var(--goal-width);
+  height: var(--goal-height);
+  background-color: #000;
+  transform: translateY(-50%);
+}
+
+.hockey-rink__goal--left {
+  left: 0;
+}
+
+.hockey-rink__goal--right {
+  right: 0;
+}
+
+.hockey-rink__faceoff-circle {
+  position: absolute;
+  width: calc(var(--faceoff-circle-radius) * 2);
+  height: calc(var(--faceoff-circle-radius) * 2);
+  border: 1px solid #000;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.hockey-rink__faceoff-circle--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hockey-rink__faceoff-circle--left-top {
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.hockey-rink__faceoff-circle--right-top {
+  top: 25%;
+  right: 25%;
+  transform: translate(50%, -50%);
+}
+
+.hockey-rink__faceoff-circle--left-bottom {
+  bottom: 25%;
+  left: 25%;
+  transform: translate(-50%, 50%);
+}
+
+.hockey-rink__faceoff-circle--right-bottom {
+  bottom: 25%;
+  right: 25%;
+  transform: translate(50%, 50%);
+}
+
+.hockey-rink__zone {
+  position: absolute;
+  height: 100%;
+  background-color: transparent;
+}
+
+
+.hockey-rink__zone--defense {
+  width: var(--zone-defense-width);
+}
+
+.hockey-rink__zone--neutral {
+  width: var(--zone-neutral-width);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hockey-rink__zone--attack {
+  width: var(--zone-defense-width);
+}
+
+.hockey-rink__zone--left {
+  left: 0;
+}
+
+.hockey-rink__zone--right {
+  right: 0;
+}
+
+/* Подписи размеров */
+.hockey-rink__label {
+  position: absolute;
+  color: #000;
+  font-size: 11px;
+  font-family: sans-serif;
+  font-weight: normal;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.hockey-rink__label--length {
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hockey-rink__label--width {
+  top: 50%;
+  left: 5px;
+   transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+.hockey-rink__label--zone-defense {
+  top: 5px;
+  left: calc(var(--zone-defense-width) / 2);
+   transform: translateX(-50%);
+}
+
+.hockey-rink__label--zone-neutral {
+    top: 5px;
+  left: 50%;
+   transform: translateX(-50%) translateY(-15px); /* Смещаем метку нейтральной зоны */
+}
+.hockey-rink__label--zone-neutral::after{
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -10px;
+  height: 1px;
+  width: calc(100% + 20px);
+  background-color: black;
+}
+.hockey-rink__label--zone-defense::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -10px;
+  height: 1px;
+  width: calc(100% + 20px);
+  background-color: black;
+}
+.hockey-rink__label--length::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -10px;
+  height: 1px;
+  width: calc(100% + 20px);
+  background-color: black;
+}
+.hockey-rink__label--width::after{
+    content: '';
+  position: absolute;
+      right: -5px;
+  top: 50%;
+      transform: translateY(-50%);
+  height: calc(100% + 1px);
+  width: 1px;
+  background-color: black;
+}

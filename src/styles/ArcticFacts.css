@@ -1,0 +1,177 @@
+.arctic-facts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
+  }
+  
+  .arctic-facts-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0a4b8c;
+  }
+  
+  .arctic-facts-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+  }
+  
+  .arctic-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .arctic-spec-category {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .arctic-spec-category-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #0a4b8c;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .arctic-spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .arctic-spec-item {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+  }
+  
+  .arctic-spec-marker {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: #0a4b8c;
+    border-radius: 50%;
+  }
+  
+  .arctic-comparison {
+    margin-bottom: 50px;
+  }
+  
+  .arctic-comparison-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #0a4b8c;
+  }
+  
+  .arctic-comparison-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .arctic-comparison-header {
+    display: contents;
+    font-weight: 600;
+  }
+  
+  .arctic-comparison-header > div {
+    background: #f0f6ff;
+    padding: 15px;
+  }
+  
+  .arctic-comparison-row {
+    display: contents;
+  }
+  
+  .arctic-comparison-row > div {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .arctic-comparison-parameter {
+    background: #f9f9f9;
+    font-weight: 500;
+  }
+  
+  .arctic-comparison-value {
+    background: white;
+  }
+  
+  .arctic-limitations {
+    background: #fff8f8;
+    border-radius: 8px;
+    padding: 25px;
+    border-left: 4px solid #cc3333;
+  }
+  
+  .arctic-limitations-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #cc3333;
+  }
+  
+  .arctic-limitations-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .arctic-limitations-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+  }
+  
+  .arctic-limitations-list li::before {
+    content: '!';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #cc3333;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .arctic-specs-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .arctic-comparison-table {
+      grid-template-columns: 1fr;
+    }
+    
+    .arctic-comparison-header {
+      display: none;
+    }
+    
+    .arctic-comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .arctic-comparison-row > div {
+      padding: 10px;
+    }
+    
+    .arctic-comparison-parameter {
+      grid-column: 1 / span 2;
+      background: #f0f6ff;
+      font-weight: 600;
+    }
+  }

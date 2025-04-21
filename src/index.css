@@ -1,0 +1,24 @@
+:root {
+  --text-blue : #252b42;
+  --text--gray: #797979;
+  --button-blue: #2091F9;
+  --blue-bg: #252b42;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html,body, :root {
+  scrollbar-width: none;
+  
+  height: 100%;
+  
+
+}
+

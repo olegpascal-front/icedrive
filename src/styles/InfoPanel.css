@@ -1,0 +1,150 @@
+/* InfoPanel.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+.info-panel {
+    background: #252b42; /* Изменил цвет фона на более темный */
+    padding: 50px;  /* Увеличил отступ */
+    border-radius: 25px;  /* Уменьшил скругление */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4),
+                -5px -5px 15px rgba(30, 30, 30, 0.2);  /* Немного изменил тень */
+    max-width: 1150px; /* Сделал уже */
+    width: 90%;  /* Сделал уже */
+    margin: 50px auto; /* Сделал меньше отступы */
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    z-index: 28;
+    position: relative;
+     border: 2px solid rgba(255,255,255,0.15); /* Рамка*/
+}
+.info-panel.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+.info-panel::before {
+  content: '';
+    position: absolute;
+    top: 2px; /* Уменьшил верхнюю границу */
+    left: 2px;  /* Уменьшил левую границу */
+    right: 2px; /* Уменьшил правую границу */
+    bottom: 2px; /* Уменьшил нижнюю границу */
+    border-radius: 23px; /* Уменьшил скругление */
+    background: linear-gradient(to right, #007bff, #4dd2ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.25; /* Увеличил прозрачность */
+
+}
+
+.info-panel-content {
+    position: relative;
+    z-index: 2;
+}
+
+.info-panel-title {
+    font-size: 2.4rem; /* Увеличил размер шрифта */
+    font-weight: 700; /* Сделал жирным */
+    margin-bottom: 15px; /* Уменьшил отступ */
+    text-shadow: 1.2px 1.2px 2px rgba(0, 0, 0, 0.5); /* Немного изменил тень */
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1.5s ease forwards; /* Изменил направление анимации */
+
+}
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.info-panel-text {
+    font-size: 1.6rem; /* Уменьшил размер шрифта */
+    line-height: 1.5; /* Изменил межстрочный интервал */
+    margin-bottom: 25px; /* Уменьшил отступ */
+    text-shadow: 1.2px 1.2px 2px rgba(0, 0, 0, 0.5); /* Немного изменил тень */
+     opacity: 0;
+    animation: fadeInText 1.5s ease forwards;
+}
+
+@keyframes fadeInText{
+    to{
+        opacity: 1;
+    }
+}
+
+
+.info-panel-stats {
+    display: flex;
+    justify-content: space-around;  /* Сделал расстояние между элементами */
+    gap: 30px;
+}
+
+.info-panel-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInText 1.5s ease forwards;
+     animation-delay: calc(0.5s + var(--text-delay) * 0.2s);
+}
+
+
+.info-panel-stat:nth-child(1){
+    --text-delay: 1;
+}
+.info-panel-stat:nth-child(2){
+    --text-delay: 2;
+}
+
+.info-panel-stat-number {
+    font-size: 2.5rem;  /* Уменьшил размер шрифта */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+}
+
+.info-panel-stat-label {
+    font-size: 1.4rem;  /* Уменьшил размер шрифта */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 768px) {
+    .info-panel {
+        padding: 25px; /* уменьшил отступ*/
+        border-radius: 20px; /* уменьшил скругление углов */
+    }
+        .info-panel::before {
+            border-radius: 18px;
+        }
+
+     .info-panel-title {
+        font-size: 2.1rem;
+        margin-bottom: 10px;
+    }
+
+    .info-panel-text {
+        font-size: 1.4rem;
+        line-height: 1.5;
+         margin-bottom: 20px;
+    }
+
+    .info-panel-stats {
+        gap: 20px;
+    }
+        .info-panel-stat-number {
+            font-size: 2.2rem;
+             margin-bottom: 4px;
+        }
+
+    .info-panel-stat-label {
+          font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,287 @@
+/* IceEdger.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+.ice-edger {
+    background: linear-gradient(160deg, rgba(30, 30, 30, 0.98), rgba(10, 10, 10, 0.88));
+    padding: 55px;
+    border-radius: 38px;
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.55),
+    -10px -10px 30px rgba(40, 40, 40, 0.35);
+    max-width: 1250px;
+    width: 92%;
+    margin: 80px auto;
+    max-height: 92vh;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    z-index: 20; /* Уменьшил z-index */
+}
+
+.ice-edger.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ice-edger::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-radius: 34px;
+    background: linear-gradient(to right, #fff, #fff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+.ice-edger-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 45px;
+    text-shadow: 1.5px 1.5px 5px rgba(0, 0, 0, 0.6);
+    letter-spacing: 1.5px;
+    position: relative;
+    word-wrap: break-word;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideInFromRight 1.5s ease forwards;
+    z-index: 2;
+}
+@keyframes slideInFromRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.ice-edger-title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -16px;
+    width: 140px;
+    height: 3px;
+    background: linear-gradient(to right, #fff, #fff);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255,255,255,0.3);
+    opacity: 0;
+    animation: fadeInLine 1.5s ease forwards;
+    animation-delay: 0.5s;
+    z-index: 2;
+}
+@keyframes fadeInLine{
+    to{
+        opacity: 1;
+    }
+}
+
+.ice-edger-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.ice-edger-text {
+    flex: 1;
+    margin-right: 75px;
+    font-size: 2rem;
+    line-height: 1.8;
+    text-shadow: 1.2px 1.2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.ice-edger-paragraph {
+    margin-bottom: 34px;
+    opacity: 0;
+    animation: fadeInText 1.5s ease forwards;
+     animation-delay: calc(0.5s + var(--text-delay) * 0.2s);
+}
+@keyframes fadeInText{
+    to{
+        opacity: 1;
+    }
+}
+
+.ice-edger-paragraph:nth-child(1){
+    --text-delay: 1;
+}
+.ice-edger-paragraph:nth-child(2){
+    --text-delay: 2;
+}
+.ice-edger-paragraph:nth-child(3){
+    --text-delay: 3;
+}
+
+.ice-edger-image {
+    flex: 0 0 430px;
+    max-width: 40%;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.6),
+                -8px -8px 20px rgba(40, 40, 40, 0.4);
+}
+
+.ice-edger-image::before {
+    content: '';
+    position: absolute;
+    top: 3.5px;
+    left: 3.5px;
+    right: 3.5px;
+    bottom: 3.5px;
+    border-radius: 24.5px;
+    background: linear-gradient(to right, #fff, #fff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.ice-edger-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.tractor-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+    z-index: 3;
+    pointer-events: none;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: moveOverTitle 20s linear infinite alternate;
+}
+
+@keyframes moveOverTitle {
+  0% {
+    transform: translateX(-50%) translateY(-60px) rotate(0deg) ;
+    opacity: 1;
+  }
+  20%{
+      transform: translateX(-200px) translateY(-35px) rotate(50deg);
+      opacity: 1;
+  }
+  40%{
+        transform: translateX(-100px) translateY(10px) rotate(70deg);
+      opacity: 1;
+  }
+   60% {
+      transform: translateX(100px) translateY(10px) rotate(-70deg) ;
+       opacity: 1;
+    }
+  80%{
+      transform: translateX(200px) translateY(-35px) rotate(-50deg) ;
+      opacity: 1;
+   }
+   99%{
+      transform: translateX(-50%) translateY(-60px) rotate(0deg);
+       opacity: 1;
+  }
+ 100%{
+      transform: translateX(-50%) translateY(-60px) rotate(0deg);
+       opacity: 0;
+ }
+
+}
+
+.tractor-icon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .ice-edger {
+    padding: 30px;
+        border-radius: 28px;
+    }
+    .ice-edger::before {
+        border-radius: 25px;
+    }
+    .ice-edger-title {
+        font-size: 2.2rem;
+         margin-bottom: 25px;
+    }
+      .ice-edger-title::before {
+        width: 110px;
+        bottom: -10px;
+     }
+
+    .ice-edger-content {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+    }
+    .ice-edger-text {
+        margin-right: 0;
+        margin-bottom: 25px;
+         font-size: 1.7rem;
+          line-height: 1.6;
+    }
+     .ice-edger-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 25px;
+        border-radius: 22px;
+    }
+  .ice-edger-image::before{
+   border-radius: 20px;
+    }
+
+   .tractor-icon {
+       width: 30px;
+        height: 30px;
+   }
+
+@keyframes moveOverTitle {
+    0%{
+    transform: translateX(-50%) translateY(-60px) rotate(0deg);
+    opacity: 1;
+    }
+    20%{
+       transform: translateX(-100px) translateY(-35px) rotate(50deg);
+       opacity: 1;
+   }
+    40%{
+       transform: translateX(-100px) translateY(10px) rotate(70deg);
+       opacity: 1;
+    }
+    60% {
+        transform: translateX(100px) translateY(10px) rotate(-70deg) ;
+        opacity: 1;
+    }
+   80%{
+    transform: translateX(100px) translateY(-35px) rotate(-50deg) ;
+      opacity: 1;
+   }
+   99%{
+        transform: translateX(-50%) translateY(-60px) rotate(0deg);
+       opacity: 1;
+   }
+   100% {
+        transform: translateX(-50%) translateY(-60px) rotate(0deg);
+      opacity: 0;
+   }
+}
+}
