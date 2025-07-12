@@ -1,6 +1,6 @@
 /* UltimateAdvantages.css */
 .ultimate__section {
-  background: white;
+  background: var(--bg-blue);
   padding: 80px 0 0;
   position: relative;
 }
@@ -10,6 +10,7 @@
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+  background: var(--bg-blue);
 }
 
 .ultimate__header {

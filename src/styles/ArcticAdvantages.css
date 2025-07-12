@@ -1,12 +1,13 @@
 /* Уникальные классы с префиксом arctic-advantages- */
 .arctic-advantages-section {
-    background: linear-gradient(to bottom, #FFFFFF 0%, #F8FBFF 100%);
+  background: var(--bg-blue);
     padding: 100px 0;
     position: relative;
   }
   
   .arctic-advantages-container {
     max-width: 1200px;
+    background: var(--bg-blue);
     margin: 0 auto;
     padding: 0 20px;
   }

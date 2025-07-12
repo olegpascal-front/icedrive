@@ -1,0 +1,242 @@
+:root {
+    --primary: #2091F9;
+    --primary-dark: #0d6efd;
+    --primary-light: rgba(32, 145, 249, 0.1);
+    --text-dark: #0F172A;
+    --text-light: #FFFFFF;
+    --bg-blue: #e7f3ff;
+  }
+  
+  .synthetic-ice {
+    background: var(--bg-blue);
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ice-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .ice-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .ice-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+  
+  .ice-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .solution-section {
+    margin-bottom: 5rem;
+  }
+  
+  .solution-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .highlight {
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 5px;
+  }
+  
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+  }
+  
+  .solution-description {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+  
+  .solution-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .solution-image-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 16/9;
+  }
+  
+  .solution-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  
+  .solution-image-container:hover .solution-image {
+    transform: scale(1.05);
+  }
+  
+  .image-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .equipment-section {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+  
+  .equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .equipment-item {
+    background: var(--primary-light);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+  }
+  
+  .equipment-item h4 {
+    font-size: 1.4rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .equipment-item ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .equipment-item li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .equipment-item li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 1200px) {
+    .ice-title {
+      font-size: 3.2rem;
+    }
+    
+    .ice-subtitle {
+      font-size: 1.6rem;
+    }
+    
+    .solution-title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .synthetic-ice {
+      padding: 6rem 2rem;
+    }
+    
+    .solution-gallery {
+      grid-template-columns: 1fr;
+    }
+    
+    .equipment-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .ice-title {
+      font-size: 2.5rem;
+    }
+    
+    .ice-subtitle {
+      font-size: 1.3rem;
+    }
+    
+    .solution-section {
+      margin-bottom: 3rem;
+    }
+    
+    .equipment-section {
+      padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .synthetic-ice {
+      padding: 4rem 1rem;
+    }
+    
+    .ice-title {
+      font-size: 2rem;
+    }
+    
+    .solution-title {
+      font-size: 1.6rem;
+    }
+    
+    .solution-description {
+      font-size: 1.1rem;
+    }
+    
+    .solution-gallery {
+      grid-template-columns: 1fr;
+    }
+    
+    .solution-image-container {
+      aspect-ratio: 4/3;
+    }
+  }

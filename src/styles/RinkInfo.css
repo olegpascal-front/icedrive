@@ -13,8 +13,9 @@
   }
   
   .rink-info-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
+    background: var(--bg-blue);
     position: relative;
     z-index: 2;
   }
