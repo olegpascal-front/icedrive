@@ -1,0 +1,169 @@
+:root {
+    --primary: #2091F9;
+    --primary-dark: #0d6efd;
+    --text-dark: #0F172A;
+    --bg-blue: #e7f3ff;
+  }
+  
+  .hockey-rinks {
+    background: var(--bg-blue);
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .rinks-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .rinks-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  
+  .rinks-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+  
+  .rinks-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .rinks-series {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-dark);
+  }
+  
+  .rinks-series span {
+    color: var(--primary);
+    position: relative;
+    margin: 0 10px;
+  }
+  
+  .rinks-series span:not(:last-child)::after {
+    content: '•';
+    position: absolute;
+    right: -15px;
+    color: var(--primary-dark);
+  }
+  
+  .rinks-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .rink-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 4/3;
+  }
+  
+  .rink-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .rink-image-container:hover .rink-image {
+    transform: scale(1.08);
+  }
+  
+  /* Анимация градиента при наведении */
+  .rink-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(32,145,249,0.1) 0%, rgba(32,145,249,0) 100%);
+    z-index: 1;
+    transition: all 0.6s ease;
+    opacity: 0;
+  }
+  
+  .rink-image-container:hover::before {
+    opacity: 1;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 1200px) {
+    .rinks-title {
+      font-size: 3.5rem;
+    }
+    
+    .rinks-subtitle {
+      font-size: 1.6rem;
+    }
+    
+    .rinks-series {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .hockey-rinks {
+      padding: 6rem 2rem;
+    }
+    
+    .rinks-gallery {
+      grid-template-columns: 1fr;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .rink-image-container {
+      aspect-ratio: 16/9;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .rinks-title {
+      font-size: 2.8rem;
+    }
+    
+    .rinks-subtitle {
+      font-size: 1.4rem;
+    }
+    
+    .rinks-series {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hockey-rinks {
+      padding: 4rem 1.5rem;
+    }
+    
+    .rinks-title {
+      font-size: 2.2rem;
+    }
+    
+    .rinks-subtitle {
+      font-size: 1.2rem;
+    }
+    
+    .rinks-series {
+      font-size: 1.1rem;
+    }
+    
+    .rinks-header {
+      margin-bottom: 3rem;
+    }
+  }

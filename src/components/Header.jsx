@@ -45,10 +45,10 @@ const Header = () => {
               <NavLink to="/" className={({isActive}) => isActive ? 'active' : ''}>Главная</NavLink>
             </li>
             <li>
-              <NavLink to="/ice" className={({isActive}) => isActive ? 'active' : ''}>Катки</NavLink>
+              <NavLink to="/arctic" className={({isActive}) => isActive ? 'active' : ''}>Машины для подрезки льда ARCTIC</NavLink>
             </li>
             <li>
-              <NavLink to="/arctic" className={({isActive}) => isActive ? 'active' : ''}>Машины ARTIC</NavLink>
+              <NavLink to="/ice" className={({isActive}) => isActive ? 'active' : ''}>Катки</NavLink>
             </li>
             <li>
               <NavLink to="/sports" className={({isActive}) => isActive ? 'active' : ''}>Спортивное Оборудование</NavLink>

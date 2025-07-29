@@ -14,12 +14,12 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@pbe/react-yandex-maps": "^1.2.5",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
     "aos": "^2.3.4",
     "framer-motion": "^11.18.2",
     "gsap": "^3.12.7",
-    "node-sass": "^9.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.5.0",
@@ -29,6 +29,7 @@
     "react-slick": "^0.30.3",
     "react-spring": "^9.7.5",
     "react-three-fiber": "^6.0.13",
+    "sass": "^1.89.2",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.6",
     "three": "^0.173.0",
@@ -45,7 +46,9 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "imagemin": "^9.0.1",
     "sass-embedded": "^1.83.4",
+    "sharp": "^0.34.3",
     "vite": "^6.0.5"
   }
 }

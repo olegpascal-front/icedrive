@@ -16,7 +16,8 @@
 
 html,body, :root {
   scrollbar-width: none;
-  
+  touch-action: manipulation;
+  overscroll-behavior: none;
   height: 100%;
   
 

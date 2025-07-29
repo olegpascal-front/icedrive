@@ -1,0 +1,157 @@
+:root {
+    --primary: #2091F9;
+    --primary-dark: #0d6efd;
+    --text-dark: #0F172A;
+    --bg-blue: #e7f3ff;
+  }
+  
+  .water-systems {
+    background: var(--bg-blue);
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .systems-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .systems-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+  }
+  
+  .systems-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+  
+  .systems-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .systems-features {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-dark);
+  }
+  
+  .systems-features span {
+    color: var(--primary);
+    position: relative;
+    margin: 0 10px;
+  }
+  
+  .systems-features span:not(:last-child)::after {
+    content: '•';
+    position: absolute;
+    right: -15px;
+    color: var(--primary-dark);
+  }
+  
+  .water-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .water-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .water-image-container:hover .water-image {
+    transform: scale(1.03);
+  }
+  
+  /* Эффект наведения */
+  .water-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(32, 145, 249, 0.1) 0%, rgba(32, 145, 249, 0) 100%);
+    z-index: 1;
+    transition: all 0.6s ease;
+    opacity: 0;
+  }
+  
+  .water-image-container:hover::before {
+    opacity: 1;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 1200px) {
+    .systems-title {
+      font-size: 3.5rem;
+    }
+    
+    .systems-subtitle {
+      font-size: 1.6rem;
+    }
+    
+    .systems-features {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .water-systems {
+      padding: 6rem 1.5rem;
+    }
+    
+    .systems-title {
+      font-size: 2.5rem;
+    }
+    
+    .systems-subtitle {
+      font-size: 1.4rem;
+    }
+    
+    .systems-features {
+      font-size: 1.3rem;
+    }
+    
+    .water-image-container {
+      border-radius: 8px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .systems-title {
+      font-size: 2rem;
+    }
+    
+    .systems-subtitle {
+      font-size: 1.2rem;
+    }
+    
+    .systems-features {
+      font-size: 1.1rem;
+    }
+    
+    .systems-header {
+      margin-bottom: 3rem;
+    }
+  }

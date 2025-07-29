@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     padding: 120px 0 80px; /* Добавили отступ сверху для навигации */
-    background: white;
+    background: var(--bg-blue);
     color: var(--text-dark);
     overflow: hidden;
   }
