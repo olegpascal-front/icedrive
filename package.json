@@ -48,13 +48,9 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
-<<<<<<< HEAD
     "imagemin": "^9.0.1",
     "sass-embedded": "^1.83.4",
     "sharp": "^0.34.3",
-=======
-    "sass": "^1.83.4",
->>>>>>> 563c6aff71fa19dc967d557d0cc731953ab7dac3
     "vite": "^6.0.5"
   },
   "engines": {
