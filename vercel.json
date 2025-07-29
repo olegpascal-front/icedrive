@@ -6,17 +6,26 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist",
-        "nodeVersion": "18.x"
+        "nodeVersion": "18.x",
+        "includeFiles": [
+          "dist/**",
+          "node_modules/@pbe/react-yandex-maps/**"
+        ]
       }
     }
   ],
   "routes": [
     {
-      "src": "/.*",
+      "src": "/(.*)",
       "dest": "/dist/index.html",
       "headers": {
-        "Cache-Control": "no-cache, no-store, must-revalidate"
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "ALLOW-FROM https://yandex.ru",
+        "Content-Security-Policy": "default-src 'self' https://*.yandex.ru https://*.yandex.net; script-src 'self' 'unsafe-inline' https://*.yandex.ru https://*.yandex.net; style-src 'self' 'unsafe-inline' https://*.yandex.ru; img-src 'self' data: https://*.yandex.ru https://*.yandex.net; connect-src 'self' https://*.yandex.ru https://*.yandex.net;"
       }
     }
-  ]
+  ],
+  "regions": ["all"],
+  "public": true
 }

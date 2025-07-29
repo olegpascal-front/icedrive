@@ -121,15 +121,17 @@ const ProjectsMap = () => {
         </div>
 
         <div className="yandex-map">
-          <YMaps 
-            key={`ymaps-${mapKey}`}
-            query={{ 
-              apikey: '0a0a0df4-96a0-4a97-b092-d327f042930b',
-              lang: 'ru_RU',
-              ns: "use-load-option",
-              load: "Map,Placemark,control.ZoomControl,geoObject.addon.balloon"
-            }}
-          >
+     <YMaps 
+  key={`ymaps-${mapKey}`}
+  query={{ 
+    apikey: '0a0a0df4-96a0-4a97-b092-d327f042930b',
+    lang: 'ru_RU',
+    ns: "use-load-option",
+    load: "Map,Placemark,control.ZoomControl,geoObject.addon.balloon",
+    mode: 'release', // Используем стабильную версию API
+    csp: true // Включаем поддержку Content Security Policy
+  }}
+>
             <Map
               defaultState={{
                 center: [55.751244, 37.618423],
