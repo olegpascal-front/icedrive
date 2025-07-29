@@ -29,7 +29,7 @@ const Home = () => {
       <IceResurfacer/>
       <SyntheticIce/>
       <Interactive3D/>
-      <ProjectsMap/>
+      {/* <ProjectsMap/> */}
       <ContactForm/>
        <Footer/>
      </>
