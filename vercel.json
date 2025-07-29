@@ -7,25 +7,14 @@
       "config": {
         "distDir": "dist",
         "nodeVersion": "18.x",
-        "includeFiles": [
-          "dist/**",
-          "node_modules/@pbe/react-yandex-maps/**"
-        ]
+        "installCommand": "npm install --legacy-peer-deps"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/dist/index.html",
-      "headers": {
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-        "Access-Control-Allow-Origin": "*",
-        "X-Frame-Options": "ALLOW-FROM https://yandex.ru",
-        "Content-Security-Policy": "default-src 'self' https://*.yandex.ru https://*.yandex.net; script-src 'self' 'unsafe-inline' https://*.yandex.ru https://*.yandex.net; style-src 'self' 'unsafe-inline' https://*.yandex.ru; img-src 'self' data: https://*.yandex.ru https://*.yandex.net; connect-src 'self' https://*.yandex.ru https://*.yandex.net;"
-      }
+      "dest": "/dist/index.html"
     }
-  ],
-  "regions": ["all"],
-  "public": true
+  ]
 }
