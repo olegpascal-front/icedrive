@@ -12,7 +12,7 @@ import CoolingSystems from "../components/CoolingSystems.jsx";
 import WaterSystems from "../components/WaterSystems.jsx";
 import IceResurfacer from "../components/IceResurfacer.jsx";
 import SyntheticIce from "../components/SyntheticIce.jsx";
-import ProjectsMap from "../components/ProjectsMap.jsx";
+// import ProjectsMap from "../components/ProjectsMap.jsx";
 const Home = () => {
     return (
      
